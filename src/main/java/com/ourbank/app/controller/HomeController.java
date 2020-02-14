@@ -1,4 +1,4 @@
-package com.ourbank.app;
+package com.ourbank.app.controller;
 
 import java.text.DateFormat;
 import java.util.Date;

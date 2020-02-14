@@ -1,25 +1,25 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
 <html>
 <head>
-<!-- css ì„¤ì •
+<!-- css ¼³Á¤
 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/basic.css">
   -->
 <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">  
 <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900" rel="stylesheet" />
 <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/default.css" >
 <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/fonts.css" >
-<meta charset="UTF-8">
+<meta charset="EUC-KR">
 <title>header</title>
 </head>
 <body>
 
-<!--ê²€ìƒ‰ ìœ íš¨ì„±ê²€ì‚¬ -->
+<!--°Ë»ö À¯È¿¼º°Ë»ç -->
 <script language=javascript>
 	function send(theform) {
 		if(theform.search.value=="") {
-			alert("ê²€ìƒ‰ì–´ë¥¼ ìž…ë ¥í•˜ì„¸ìš”");
+			alert("°Ë»ö¾î¸¦ ÀÔ·ÂÇÏ¼¼¿ä");
 			theform.search.focus();
 			return false;
 		}
@@ -32,13 +32,13 @@
 	
 	<div id="search">
 	 <ul class="member">
-			 <li><a href="#" class="icon icon-login"><span>ë¡œê·¸ì¸</span></a></li>
-			 <li><a href="#" class="icon icon-join"><span>íšŒì›ê°€ìž…</span></a></li>
+			 <li><a href="#" class="icon icon-login"><span>·Î±×ÀÎ</span></a></li>
+			 <li><a href="#" class="icon icon-join"><span>È¸¿ø°¡ÀÔ</span></a></li>
 	 </ul>
 	 <ul class="contact">
 			 <li><form action="" method=post name="sform">
 		 	   <input type=text name=search size=25>
-			   <input type=button value="ê²€ ìƒ‰" class="bnt_search" onclick="send(this.form);">
+			   <input type=button value="°Ë »ö" class="bnt_search" onclick="send(this.form);">
 			 </form></li>
 			 <li><a href="#" class="icon icon-facebook"><span>Facebook</span></a></li>
 			 <li><a href="#" class="icon icon-Instagram"><span>Instagram</span></a></li>
@@ -47,70 +47,70 @@
 	</div>
 </div>
 
-<!------------------------------ ë©”ë‰´ë°” --------------------------->
+<!------------------------------ ¸Þ´º¹Ù --------------------------->
 <div id="header">
 	<div id="menu" class="container">
 		<ul>
-			<li><a href="#" accesskey="1" title="">ê³µì§€ì‚¬í•­</a>
+			<li><a href="#" accesskey="1" title="">°øÁö»çÇ×</a>
 			  <div class="sub_menu"> 
 			    <ul>
-	              <li><a href="#">ì‚¬ì´íŠ¸ì†Œê°œ</a></li>
-	              <li><a href="#">ìƒˆ ì†Œì‹</a></li>
+	              <li><a href="#">»çÀÌÆ®¼Ò°³</a></li>
+	              <li><a href="#">»õ ¼Ò½Ä</a></li>
 	            </ul>
 	          </div> 
 	        </li>
-			<li><a href="#" accesskey="2" title="">ìƒí’ˆì†Œê°œ</a>
+			<li><a href="#" accesskey="2" title="">»óÇ°¼Ò°³</a>
 			  <div class="sub_menu"> 
 			    <ul>
-	              <li><a href="#">ì˜ˆê¸ˆ</a></li>
-	              <li><a href="#">ì ê¸ˆ</a></li>
+	              <li><a href="#">¿¹±Ý</a></li>
+	              <li><a href="#">Àû±Ý</a></li>
 	            </ul>
 	          </div>
 	        </li>
-			<li><a href="#" accesskey="3" title="">ì»¤ë®¤ë‹ˆí‹°</a>
+			<li><a href="#" accesskey="3" title="">Ä¿¹Â´ÏÆ¼</a>
 			  <div class="sub_menu"> 
 			    <ul>
-	              <li><a href="#">ë¦¬ë·°</a></li>
-	              <li><a href="#">ìžìœ ê²Œì‹œíŒ</a></li>
-	              <li><a href="#">ëª¨ìž„ë°©</a></li>
-	              <li><a href="#">í† ë¡ ë°©</a></li>
-	              <li><a href="#">ì œíƒœí¬ë…¸í•˜ìš°</a></li>
-	              <li><a href="#">BESTê²Œì‹œíŒ</a></li>
+	              <li><a href="#">¸®ºä</a></li>
+	              <li><a href="#">ÀÚÀ¯°Ô½ÃÆÇ</a></li>
+	              <li><a href="#">¸ðÀÓ¹æ</a></li>
+	              <li><a href="#">Åä·Ð¹æ</a></li>
+	              <li><a href="#">Á¦ÅÂÅ©³ëÇÏ¿ì</a></li>
+	              <li><a href="#">BEST°Ô½ÃÆÇ</a></li>
 	            </ul>
 	          </div>
 	        </li>
-			<li><a href="#" accesskey="4" title="">ê³ ê°ì„¼í„°</a>
+			<li><a href="faqList.do?current_page=1" accesskey="4" title="">°í°´¼¾ÅÍ</a>
 			  <div class="sub_menu"> 
 			    <ul>
-	              <li><a href="#">ìžì£¼í•˜ëŠ” ì§ˆë¬¸</a></li>
-	              <li><a href="#">QnA</a></li>
-	              <li><a href="#">Contact-email</a></li>
+	              <li><a href="faqList.do?current_page=1">ÀÚÁÖÇÏ´Â Áú¹®</a></li>
+	              <li><a href="qnaList.do?current_page=1">QnA</a></li>
+	              <li><a href="email.do">Contact-email</a></li>
 	            </ul>
 	          </div>
 	        </li>
-			<li><a href="#" accesskey="5" title="">ê´€ë ¨ì‚¬ì´íŠ¸</a>
+			<li><a href="#" accesskey="5" title="">°ü·Ã»çÀÌÆ®</a>
 			  <div class="sub_menu"> 
 			    <ul>
-	              <li><a href="#">êµ­ë‚´ê´€ë ¨ì‚¬ì´íŠ¸</a></li>
-	              <li><a href="#">í•´ì™¸ê´€ë ¨ì‚¬ì´íŠ¸</a></li>
+	              <li><a href="#">±¹³»°ü·Ã»çÀÌÆ®</a></li>
+	              <li><a href="#">ÇØ¿Ü°ü·Ã»çÀÌÆ®</a></li>
 	            </ul>
 	          </div>
 			</li>
 			<li><a href="#" accesskey="5" title="">MyPage</a>
 		  	  <div class="sub_menu"> 
 			    <ul>
-	              <li><a href="#">ê°œì¸ì •ë³´ê´€ë¦¬</a></li>
-	              <li><a href="#">ë‚´ê°€ ìž‘ì„±í•œ ê¸€</a></li>
-	              <li><a href="#">ê°€ìž…ìƒí’ˆ</a></li>
-	              <li><a href="#">ê´€ì‹¬ìƒí’ˆ</a></li>
+	              <li><a href="#">°³ÀÎÁ¤º¸°ü¸®</a></li>
+	              <li><a href="#">³»°¡ ÀÛ¼ºÇÑ ±Û</a></li>
+	              <li><a href="#">°¡ÀÔ»óÇ°</a></li>
+	              <li><a href="#">°ü½É»óÇ°</a></li>
 	            </ul>
 	          </div>
 			</li>
-			<li><a href="#" accesskey="5" title="">ë‰´ìŠ¤ì™€ì •ë³´</a>
+			<li><a href="#" accesskey="5" title="">´º½º¿ÍÁ¤º¸</a>
 			  <div class="sub_menu"> 
 			    <ul>
-	              <li><a href="#">ê¸ˆìœµíšŒì‚¬ì •ë³´</a></li>
-	              <li><a href="#">ê´€ë ¨ë‰´ìŠ¤</a></li>
+	              <li><a href="#">±ÝÀ¶È¸»çÁ¤º¸</a></li>
+	              <li><a href="#">°ü·Ã´º½º</a></li>
 	            </ul>
 	          </div>
 			</li>
