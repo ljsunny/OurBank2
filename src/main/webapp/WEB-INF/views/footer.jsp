@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,7 +7,7 @@
 <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900" rel="stylesheet" />
 <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/default.css" >
 <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/fonts.css" >
-<meta charset="UTF-8">
+<meta charset="EUC-KR">
 </head>
 <body>
 
@@ -18,8 +18,8 @@
 			 <li><a href="#" class="icon icon-twitter"><span>Twitter</span></a></li>
 	 </ul>
    <div id="copyright" class="container">
-    <p>ì„œìš¸íŠ¹ë³„ì‹œ ì¢…ë¡œêµ¬ ì¢…ë¡œ12ê¸¸ 15   (ì£¼)ì†”ë°ìŠ¤í¬      |   ë¯¼ì›ìƒë‹´ì „í™”  1688-0000    |   ëŒ€í‘œì „í™” 02-000-0000   |   <a href="#">Mail To Webmaster</a> </p>
-	<p>&copy; Untitled. All rights reserved. | Project by  ê¶Œí¬ì§€    ê¹€íš¨ë¯¼    ì´ì§€ì„ </p>
+    <p>¼­¿ïÆ¯º°½Ã Á¾·Î±¸ Á¾·Î12±æ 15   (ÁÖ)¼Öµ¥½ºÅ©      |   ¹Î¿ø»ó´ãÀüÈ­  1688-0000    |   ´ëÇ¥ÀüÈ­ 02-000-0000   |   <a href="#">Mail To Webmaster</a> </p>
+	<p>&copy; Untitled. All rights reserved. | Project by  ±ÇÈñÁö    ±èÈ¿¹Î    ÀÌÁö¼±</p>
    </div>
  
  </div>
