@@ -8,6 +8,7 @@ import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
 import org.slf4j.Logger;
@@ -41,20 +42,25 @@ public class QNABoard_Controller {
 	public String showWriteForm(Model model) {
 		logger.info("show_write_form called!!");
 		
-		int id=0;
-		
-		model.addAttribute("id", id);
-		model.addAttribute("boardBean", new QNABoard_Bean());
+		int idx=0;
+		//본글일때
+		int reply=0;
+		QNABoard_Bean boardBean=new QNABoard_Bean();
+		boardBean.setReply(reply);
+		model.addAttribute("idx", idx);
+		model.addAttribute("boardBean", boardBean);
+		model.addAttribute("reply", reply);
 		return "board_customer/qna/qnaWriteForm";
-		
 	}
 	//글쓰기
 	@RequestMapping(value="/qna_write_form.do", method=RequestMethod.POST)
 	public String DoQnaWriteBoard(@ModelAttribute("boardBean") @Valid QNABoard_Bean boardBean,
 			BindingResult bindingResult,
+			HttpServletRequest request,
 			Model model) {
 		System.out.println(boardBean.toString());
 		MultipartFile file=boardBean.getFile();
+		
 		
 		//유효성 검사
 		if(bindingResult.hasErrors()) {
@@ -77,19 +83,26 @@ public class QNABoard_Controller {
 			
 			try {
 				byte[] fileData=file.getBytes();
-				FileOutputStream output=new FileOutputStream("C:\\eclipse_ourBank\\OurBank\\src\\main\\resources\\files\\"+fileName);
+				FileOutputStream output=new FileOutputStream("D:\\javaBigData\\mywork_spring\\OurBank3_1\\src\\main\\resources\\files"+fileName);
 				output.write(fileData);
 			}catch (Exception e) {
 				e.printStackTrace();
 			}
 		}
-		String id="admin";
+		HttpSession session=request.getSession();
+		String id=(String)session.getAttribute("uid");
 		boardBean.setId(id);
 		logger.info(boardBean.getCategory()+" "+
 					boardBean.getId()+" "+
 					boardBean.getContent()+" "+
 					boardBean.getSubject());
 		boardService.insertBoard(boardBean);
+		if(boardBean.getReply()==0) {
+			//insert 한 id 얻어오기
+			int idx=boardService.getRecent();
+			//reply를 idx 값으로 지정(그룹으로 묶음)
+			boardService.updateReply(idx);
+		}
 		
 		model.addAttribute("totalCnt", new Integer(boardService.getTotalCnt()));
 		model.addAttribute("current_page", 1);
@@ -100,9 +113,15 @@ public class QNABoard_Controller {
 	//리스트 뿌리기
 	@RequestMapping(value="/qnaList.do", method=RequestMethod.GET)
 	public String qnaList(
+			HttpServletRequest request,
 			@RequestParam("current_page") String pageForView, Model model
 			) {
+		
 		logger.info("qnaList called !!");
+		HttpSession session=request.getSession();
+		String uid=(String)session.getAttribute("uid");
+		logger.info(uid);
+		model.addAttribute("uid", uid);
 		model.addAttribute("totalCnt", new Integer(boardService.getTotalCnt()));//전체 글수
 		model.addAttribute("current_page",pageForView);
 		model.addAttribute("boardList", boardService.getList(Integer.parseInt(pageForView), 10)); //리스트뿌릴 ArrayList 받아와서 저장
@@ -157,11 +176,16 @@ public class QNABoard_Controller {
 		model.addAttribute("hits", boardData.getHits());
 		logger.info(boardData.getCategory());
 		
+		
+		boardData.setReply(1);
+		
 		model.addAttribute("idx", idx);
 		model.addAttribute("current_page", current_page);
 		model.addAttribute("searchStr", searchStr);
 		model.addAttribute("boardData", boardService.getSpecificRow(idx));
+		model.addAttribute("category", boardData.getCategory());
 		model.addAttribute("filename", boardData.getFilename());
+		model.addAttribute("reply", boardData.getReply());
 		return "board_customer/qna/qnaViewMemo";
 	}
 	
@@ -179,6 +203,22 @@ public class QNABoard_Controller {
 	        response.setContentLength(bytes.length);
 	        return bytes;
 	   }
+	//답글
+	@RequestMapping(value="reply_from.do", method=RequestMethod.GET)
+	public String replyFrom(
+			@RequestParam int idx,
+			@RequestParam String category,
+			Model model) {
+		
+		int reply=idx;
+		QNABoard_Bean boardBean=new QNABoard_Bean();
+		boardBean.setReply(reply);
+		model.addAttribute("idx", idx);
+		model.addAttribute("category", category);
+		model.addAttribute("boardBean", boardBean);
+		return "board_customer/qna/qnaWriteForm";
+		
+	}
 	//글수정폼
 	@RequestMapping(value="qna_show_update_form.do",method=RequestMethod.GET)
 	public String showUpdateForm(
@@ -227,7 +267,7 @@ public class QNABoard_Controller {
 			
 			try {
 				byte[] fileData=file.getBytes();
-				FileOutputStream output=new FileOutputStream("C:\\eclipse_ourBank\\OurBank\\src\\main\\resources\\files\\"+fileName);
+				FileOutputStream output=new FileOutputStream("D:\\javaBigData\\mywork_spring\\OurBank3_1\\src\\main\\resources\\files"+fileName);
 				output.write(fileData);
 			}catch (Exception e) {
 				e.printStackTrace();
