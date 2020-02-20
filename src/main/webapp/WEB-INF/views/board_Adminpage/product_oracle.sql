@@ -69,6 +69,7 @@ create table tlb_bank_board(
  from tlb_deposit_board d, tlb_bank_board b 
  where d.fin_co_no=b.fin_co_no)
  where page=1
+ 
  select * from(
  select d.fin_prdt_nm, d.kor_co_nm, d.intr_rate_type_nm,
  d.save_trm, d.intr_rate, d.intr_rate2, b.homp_url,ceil(rownum/10) as page from TLB_DEPOSIT_BOARD d, TLB_BANK_BOARD b

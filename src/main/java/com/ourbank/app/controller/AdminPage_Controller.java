@@ -20,7 +20,7 @@ import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
 import com.ourbank.app.bean.DepositBoard_Bean;
-import com.ourbank.app.bean.SavinBoard_Bean;
+import com.ourbank.app.bean.SavingBoard_Bean;
 import com.ourbank.app.service.AdminPage_Service;
 import com.ourbank.app.service.MyPage_Service;
 import com.ourbank.app.service.User_Service;
@@ -177,7 +177,7 @@ public class AdminPage_Controller {
 			DocumentBuilder dBuilder = dbFactoty.newDocumentBuilder();
 			Document doc = dBuilder.parse(url);
 
-			ArrayList<SavinBoard_Bean> all_list = new ArrayList();
+			ArrayList<SavingBoard_Bean> all_list = new ArrayList();
 
 			// root tag
 			doc.getDocumentElement().normalize();
@@ -191,7 +191,7 @@ public class AdminPage_Controller {
 			for (int temp = 0; temp < BasenList.getLength(); temp++) {// baseinfo 부분
 				Node nNode1 = BasenList.item(temp);
 				Node nNode2 = OptionList.item(temp);
-				SavinBoard_Bean savingBean = new SavinBoard_Bean();
+				SavingBoard_Bean savingBean = new SavingBoard_Bean();
 				total += 1;
 
 				if (nNode1.getNodeType() == Node.ELEMENT_NODE) {// base info
@@ -298,7 +298,7 @@ public class AdminPage_Controller {
 			DocumentBuilder dBuilder = dbFactoty.newDocumentBuilder();
 			Document doc = dBuilder.parse(url);
 
-			ArrayList<SavinBoard_Bean> all_list = new ArrayList();
+			ArrayList<SavingBoard_Bean> all_list = new ArrayList();
 
 			// root tag
 			doc.getDocumentElement().normalize();
@@ -310,7 +310,7 @@ public class AdminPage_Controller {
 			for (int temp = 0; temp < BasenList.getLength(); temp++) {// baseinfo 부분
 				Node nNode1 = BasenList.item(temp);
 				
-				SavinBoard_Bean savingBean = new SavinBoard_Bean();
+				SavingBoard_Bean savingBean = new SavingBoard_Bean();
 				total += 1;
 
 				if (nNode1.getNodeType() == Node.ELEMENT_NODE) {// base info

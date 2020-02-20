@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.ourbank.app.bean.DepositBoard_Bean;
-import com.ourbank.app.bean.SavinBoard_Bean;
+import com.ourbank.app.bean.SavingBoard_Bean;
 import com.ourbank.app.mapper.AdminPage_Mapper;
 
 @Component
@@ -28,11 +28,11 @@ public void deleteDeposit() {
 	adminMapper.delete_deposit();
 }
 
-public void insertSaving(ArrayList<SavinBoard_Bean> all_list) {
-	Iterator<SavinBoard_Bean> iterator=all_list.iterator();
+public void insertSaving(ArrayList<SavingBoard_Bean> all_list) {
+	Iterator<SavingBoard_Bean> iterator=all_list.iterator();
 	
 	while(iterator.hasNext()) {
-	SavinBoard_Bean savingBean=(SavinBoard_Bean) iterator.next();
+	SavingBoard_Bean savingBean=(SavingBoard_Bean) iterator.next();
 	System.out.println(savingBean.getFin_prdt_nm());
 	adminMapper.insert_saving(savingBean);
 	}
@@ -43,10 +43,10 @@ public void deleteSaving() {
 	adminMapper.delete_saving();
 }
 
-public void insertBank(ArrayList<SavinBoard_Bean> all_list) {
-	Iterator<SavinBoard_Bean> iterator=all_list.iterator();
+public void insertBank(ArrayList<SavingBoard_Bean> all_list) {
+	Iterator<SavingBoard_Bean> iterator=all_list.iterator();
 	while(iterator.hasNext()) {
-	SavinBoard_Bean savingBean=(SavinBoard_Bean) iterator.next();
+	SavingBoard_Bean savingBean=(SavingBoard_Bean) iterator.next();
 	System.out.println(savingBean.getHomp_url());
 	adminMapper.insert_bank(savingBean);
 	}

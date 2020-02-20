@@ -94,7 +94,7 @@
 
 		<div id="list_div">
 			<div id="productContent">
-				<sapn>금융회사 최종제출일:${submitDay}</span> <b><h2>${depositBean.getFin_prdt_nm()}</h2></b>
+				<sapn>금융회사 최종제출일:${submitDay}</span> <b><h2>${savingBean.getFin_prdt_nm()}</h2></b>
 				<dl class="product-info1">
 					<dd>${joinWay}</dd>
 				</dl>
@@ -104,20 +104,20 @@
 						<img
 							src="${pageContext.request.contextPath}/resources/images/calender.png" />
 						<dt>기간</dt>
-						<dd>${depositBean.getSave_trm()}개월</dd>
+						<dd>${savingBean.getSave_trm()}개월</dd>
 					</dl>
 					<dl class="img2">
 						<img
 							src="${pageContext.request.contextPath}/resources/images/coin.png" />
 						<dt>금융회사</dt>
-						<dd>${depositBean.getKor_co_nm()}</dd>
+						<dd>${savingBean.getKor_co_nm()}</dd>
 					</dl>
 					<dl class="img3">
 						<img
 							src="${pageContext.request.contextPath}/resources/images/graph.png" />
 						<dt>최고</dt>
 						<dd>
-							연&nbsp;<span>${depositBean.getIntr_rate2()}%</span>
+							연&nbsp;<span>${savingBean.getIntr_rate2()}%</span>
 						</dd>
 					</dl>
 				</div>
@@ -131,7 +131,7 @@
 			<div id="productContet3">
 				<div id="a1" class="product_button">
 					<input type="button" value="상세설명" onclick="show_area1()" /> <input
-						id="clicked" type="button" value="예금계산기" onclick="show_area2();" />
+						id="clicked" type="button" value="적금계산기" onclick="show_area2();" />
 				</div>
 				<div id="a2" class="product_button" style="display: none;">
 					<input id="clicked" type="button" value="상세설명"
@@ -149,27 +149,31 @@
 							</dl>
 							<dl>
 								<dt>가입대상</dt>
-								<dd>${depositBean.getJoin_member()}</dd>
+								<dd>${savingBean.getJoin_member()}</dd>
 							</dl>
 							<dl>
 								<dt>금리 유형</dt>
-								<dd>${depositBean.getIntr_rate_type_nm()}</dd>
+								<dd>${savingBean.getIntr_rate_type_nm()}</dd>
 							</dl>
 							<dl>
 								<dt>만기 후 이자율</dt>
-								<dd>${depositBean.getMtrt_int()}</dd>
+								<dd>${savingBean.getMtrt_int()}</dd>
 							</dl>
 
 						</div>
 						<div class="product-info5">
 							<dl>
+								<dt>적립유형</dt>
+								<dd>${savingBean.getRsrv_type_nm()}</dd>
+							</dl>
+							<dl>
 								<dt>우대조건</dt>
-								<dd>${depositBean.getSpcl_cnd()}</dd>
+								<dd>${savingBean.getSpcl_cnd()}</dd>
 							</dl>
 
 							<dl>
 								<dt>기타사항</dt>
-								<dd>${depositBean.getEtc_note()}</dd>
+								<dd>${savingBean.getEtc_note()}</dd>
 							</dl>
 						</div>
 					</div>
@@ -182,7 +186,7 @@
 							<dd>
 								<input id="d_amount" class="input1" type="text" placeholder="원금">원을 &nbsp; 
 								<input id="d_period" type="text" placeholder="기간">개월 간 금리&nbsp; 
-								<input id="d_intr" readonly="readonly" value="${depositBean.getIntr_rate2()}" 
+								<input id="d_intr" readonly="readonly" value="${savingBean.getIntr_rate2()}" 
 								type="text" placeholder="금리">%로 운용하면?  &nbsp;
 								<input class="button1" type="submit" 
 								value="결과" onclick="check_deposit()">

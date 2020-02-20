@@ -12,6 +12,7 @@
 <script type="text/javascript">
 function reject(){
 	window.opener.returnID();
+	document.getElementById("id").value="";
 }
 </script>
 </head>

@@ -10,6 +10,7 @@ function idCheck(id){
 }
 function returnID(){
 		document.regForm.id.value=null;
+		
 		document.regForm.id.focus();
 }
 
@@ -27,6 +28,7 @@ function inputCheck() {
 	if(document.regForm.id.value==""){
 		alert("아이디를 입력해 주세요");
 		regForm.id.focus();
+		
 		return false;
 	}
 	if(document.regForm.passwd.value==""){

@@ -68,7 +68,8 @@ function after_paging(page){
 		<c:forEach var="boardList" items="${boardList}">
 		
 			<tr >
-				<td><a id="product_name" href="#">${boardList.getFin_prdt_nm()}</a></td>
+				<td><a id="product_name" 
+				href="savingContent.do?current_page=${current_page}&fin_prdt_cd=${boardList.getFin_prdt_cd()}">${boardList.getFin_prdt_nm()}</a></td>
 				<td>${boardList.getKor_co_nm()}</td>
 				<td>최고 연 ${boardList.getIntr_rate()}%</td>
 				<td>우대금리 ${boardList.getIntr_rate2()}%</td>
