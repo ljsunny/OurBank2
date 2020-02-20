@@ -19,7 +19,6 @@ public class QNABoard_Service {
 		boardMapper.insertBoard(boardBean);	
 		};
 
-<<<<<<< HEAD
 	// 가장 최근글 가져오기
 	public int getRecent() {
 		return boardMapper.getRecent();
@@ -29,8 +28,6 @@ public class QNABoard_Service {
 		this.boardMapper.updateReply(idx);
 	}
 	
-=======
->>>>>>> c9c47e41758b31539dfacfd8eea9f9884867abe0
 	// 조회수 올리기
 	public void updateHits(int hits, int idx) {
 		System.out.println("조회수 올라감");

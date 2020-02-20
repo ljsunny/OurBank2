@@ -1,10 +1,7 @@
 <%@ page language="java"
 	import="java.util.*,java.sql.*,javax.servlet.http.*"
 	contentType="text/html; charset=EUC-KR" pageEncoding="EUC-KR"%>
-<<<<<<< HEAD
 <%@page import="org.springframework.web.bind.annotation.SessionAttributes "%>
-=======
->>>>>>> c9c47e41758b31539dfacfd8eea9f9884867abe0
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" 
 "http://www.w3.org/TR/html4/loose.dtd">
 <%@ page import="java.io.*,java.text.*"%>
@@ -62,7 +59,6 @@ function etclist(){
 <div>
 <c:set var="current_page" value="${current_page}" />
 <c:set var="total_cnt" value="${totalCnt}" />
-<<<<<<< HEAD
 
 <%
 	int c_page = Integer.parseInt((String) (pageContext.getAttribute("current_page")));
@@ -72,12 +68,6 @@ function etclist(){
 	String uid=(String) session.getAttribute("uid"); 
 %>
 <c:set var="uid" value="<%=uid%>"/>
-=======
-<%
-	int c_page = Integer.parseInt((String) (pageContext.getAttribute("current_page")));
-	pageContext.setAttribute("c_page", c_page);
-%>
->>>>>>> c9c47e41758b31539dfacfd8eea9f9884867abe0
 <table width="700">
 	<tr>
 		<td>
@@ -97,10 +87,7 @@ function etclist(){
 		</td>
 	</tr>
 </table>
-<<<<<<< HEAD
 
-=======
->>>>>>> c9c47e41758b31539dfacfd8eea9f9884867abe0
 <table cellspacing=1 width=700 border=0>
 	<tr>
 		<td>총 게시물수: <c:out value="${totalCnt}" /></td>
@@ -112,7 +99,6 @@ function etclist(){
 
 </table>
 
-<<<<<<< HEAD
 <table cellspacing=1 width=700 border=1 >
 	<tr>
 		<th width="50"><p align="center">번호</th>
@@ -120,15 +106,6 @@ function etclist(){
 		<th width="320"><p align="center">제목</th>
 		<th width="100"><p align="center">등록일</th>
 		<th width="100"><p align="center">조회수</th>
-=======
-<table cellspacing=1 width=700 border=1>
-	<tr>
-		<td width="50"><p align="center">번호</td>
-		<td width="100"><p align="center">아이디</td>
-		<td width="320"><p align="center">제목</td>
-		<td width="100"><p align="center">등록일</td>
-		<td width="100"><p align="center">조회수</td>
->>>>>>> c9c47e41758b31539dfacfd8eea9f9884867abe0
 	</tr>
 	<c:forEach var="board" items="${boardList}">
 		<tr>
@@ -173,20 +150,14 @@ function etclist(){
 			</c:forEach></td>
 	</tr>
 </table>
-<<<<<<< HEAD
 <c:if test="${uid=='admin'}">
-=======
->>>>>>> c9c47e41758b31539dfacfd8eea9f9884867abe0
 <table cellspacing="1" width="700">
 	<tr>
 		<td><input type="button" value="글쓰기"
 			onclick="window.location='faq_show_write_form.do'"></td>
 	</tr>
 </table>
-<<<<<<< HEAD
 </c:if>
-=======
->>>>>>> c9c47e41758b31539dfacfd8eea9f9884867abe0
 </div>	
 <!-- *********************** 게시판 글쓰기 폼 ****************************  -->	
 

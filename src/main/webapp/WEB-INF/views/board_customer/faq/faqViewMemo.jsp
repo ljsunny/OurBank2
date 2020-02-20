@@ -22,10 +22,7 @@
 <%
 	String searchString=(String) (pageContext.getAttribute("searchString"));
 	String filename=(String) (pageContext.getAttribute("filename"));
-<<<<<<< HEAD
 	String uid=(String) session.getAttribute("uid");
-=======
->>>>>>> c9c47e41758b31539dfacfd8eea9f9884867abe0
 %>
 <script  language="javascript">
 function boardlist(){
@@ -100,17 +97,11 @@ function download(){
 <table cellspacing="0" cellpadding="0" border="0" width="500">
 	<tr>
 	<td>
-<<<<<<< HEAD
 	<c:if test="${uid=='admin'}">
 		<input type="button" value="수정" onclick="javascript:boardmodify()">
 		<input type="button" value="삭제" onclick="javascript:boarddelete()">
 	</c:if>
 		<input type="button" value="목록" onclick="javascript:boardlist()">
-=======
-		<input type="button" value="수정" onclick="javascript:boardmodify()">
-		<input type="button" value="목록" onclick="javascript:boardlist()">
-		<input type="button" value="삭제" onclick="javascript:boarddelete()">
->>>>>>> c9c47e41758b31539dfacfd8eea9f9884867abe0
 	</td>
 	</tr>
 

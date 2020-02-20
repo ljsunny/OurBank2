@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <%@ page language="java" import="java.util.*,java.sql.*,javax.servlet.http.*" 
 contentType="text/html; charset=EUC-KR" pageEncoding="EUC-KR"%>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" 
@@ -31,17 +30,5 @@ contentType="text/html; charset=EUC-KR" pageEncoding="EUC-KR"%>
 <!-- *********************** 게시판 글쓰기 폼 ****************************  -->	
 
 	<jsp:include page="../../footer.jsp"></jsp:include>
-=======
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="EUC-KR">
-<title>Insert title here</title>
-</head>
-<body>
-	<img alt="" src="images/coming_soon.jpg">
->>>>>>> c9c47e41758b31539dfacfd8eea9f9884867abe0
 </body>
 </html>

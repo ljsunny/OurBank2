@@ -43,7 +43,6 @@ function boardlist(){
 <!-- *********************** 내용 ****************************  -->
 <c:url var="insertUrl" value="/qna_write_form.do" />	
 <sf:form modelAttribute="boardBean" commandName="boardBean" enctype="multipart/form-data" method="POST" action="${insertUrl}" >
-<<<<<<< HEAD
 	<sf:hidden path="idx" value="${idx}"/>
 	<sf:hidden path="reply" vluae="${boardBean.getReply()}"/>
 	
@@ -66,25 +65,10 @@ function boardlist(){
 			<td><b>카테고리</b></td>
 			<td><sf:select path="category">
 				<sf:option value="signup" label="회원가입" selected="selected"/>
-=======
-	<sf:hidden path="idx" value="${id_x}"/>
-
-	<table width="400" border="1" cellspacing="0" cellpadding="5">
-		<tr>
-			<td><b>제목</b></td>
-			<td><sf:input path="subject" size="50" maxlength="50"  value="[질문]"/><br /> 
-			<sf:errors path="subject" cssClass="error" /></td>
-		</tr>
-		<tr>
-			<td><b>카테고리</b></td>
-			<td><sf:select path="category">
-				<sf:option value="signup" label="회원가입"/>
->>>>>>> c9c47e41758b31539dfacfd8eea9f9884867abe0
 				<sf:option value="savings" label="예적금"/>
 				<sf:option value="etc" label="기타"/>
 			</sf:select></td>
 		</tr>
-<<<<<<< HEAD
 		</c:if>
 		<c:if test="${category eq 'savings'}">
 		<tr>
@@ -107,8 +91,6 @@ function boardlist(){
 		</tr>
 		</c:if>
 	
-=======
->>>>>>> c9c47e41758b31539dfacfd8eea9f9884867abe0
 		
 		<tr>
 			<td><b>내용</b></td>
@@ -122,15 +104,10 @@ function boardlist(){
 			<td><input type="file" name="file"></td>
 		</tr>
 		<tr>
-<<<<<<< HEAD
 			<td colspan="2" align="center">
 			<input type="submit" value="등록" />
 
 			<input type="button" value="취소" onclick="javascript:boardlist()"></td>
-=======
-			<td colspan="2" align="center"><input type="submit" value="등록" />
-				<input type="button" value="취소" onclick="javascript:boardlist()"></td>
->>>>>>> c9c47e41758b31539dfacfd8eea9f9884867abe0
 		</tr>
 	</table>
 </sf:form>

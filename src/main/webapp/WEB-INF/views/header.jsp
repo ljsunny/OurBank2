@@ -1,11 +1,6 @@
-<<<<<<< HEAD
 <%@ page language="java" contentType="text/html; charset=EUC-KR" import="java.util.*,java.sql.*,javax.servlet.http.*"
     pageEncoding="EUC-KR"%>
  <%@taglib prefix="c"  uri="http://java.sun.com/jsp/jstl/core"%>
-=======
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
->>>>>>> c9c47e41758b31539dfacfd8eea9f9884867abe0
 <!DOCTYPE html>
 <html>
 <head>
@@ -16,10 +11,7 @@
 <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900" rel="stylesheet" />
 <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/default.css" >
 <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/fonts.css" >
-<<<<<<< HEAD
 
-=======
->>>>>>> c9c47e41758b31539dfacfd8eea9f9884867abe0
 <meta charset="EUC-KR">
 <title>header</title>
 </head>
@@ -58,7 +50,6 @@ String uid=(String)session.getAttribute("uid");
 					<a href="logOut.do">로그아웃</a>
 					
 	
-<<<<<<< HEAD
 				 </c:if>
 			</ul>
 			<ul class="contact">
@@ -71,22 +62,6 @@ String uid=(String)session.getAttribute("uid");
 				<li><a href="#" class="icon icon-twitter"><span>Twitter</span></a></li>
 			</ul>
 		</div>
-=======
-	<div id="search">
-	 <ul class="member">
-			 <li><a href="#" class="icon icon-login"><span>로그인</span></a></li>
-			 <li><a href="#" class="icon icon-join"><span>회원가입</span></a></li>
-	 </ul>
-	 <ul class="contact">
-			 <li><form action="" method=post name="sform">
-		 	   <input type=text name=search size=25>
-			   <input type=button value="검 색" class="bnt_search" onclick="send(this.form);">
-			 </form></li>
-			 <li><a href="#" class="icon icon-facebook"><span>Facebook</span></a></li>
-			 <li><a href="#" class="icon icon-Instagram"><span>Instagram</span></a></li>
-			 <li><a href="#" class="icon icon-twitter"><span>Twitter</span></a></li>
-	 </ul>
->>>>>>> c9c47e41758b31539dfacfd8eea9f9884867abe0
 	</div>
 
 <!------------------------------ 메뉴바 --------------------------->
@@ -101,19 +76,11 @@ String uid=(String)session.getAttribute("uid");
 	            </ul>
 	          </div> 
 	        </li>
-<<<<<<< HEAD
 			<li><a href="depositList.do?current_page=1" accesskey="2" title="">상품소개</a>
 			  <div class="sub_menu"> 
 			    <ul>
 	              <li><a href="depositList.do?current_page=1">예금</a></li>
 	              <li><a href="savingList.do?current_page=1">적금</a></li>
-=======
-			<li><a href="#" accesskey="2" title="">상품소개</a>
-			  <div class="sub_menu"> 
-			    <ul>
-	              <li><a href="#">예금</a></li>
-	              <li><a href="#">적금</a></li>
->>>>>>> c9c47e41758b31539dfacfd8eea9f9884867abe0
 	            </ul>
 	          </div>
 	        </li>

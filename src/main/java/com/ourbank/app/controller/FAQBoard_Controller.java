@@ -5,13 +5,9 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.List;
 
-<<<<<<< HEAD
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-=======
-import javax.servlet.http.HttpServletResponse;
->>>>>>> c9c47e41758b31539dfacfd8eea9f9884867abe0
 import javax.validation.Valid;
 
 import org.slf4j.Logger;
@@ -41,11 +37,7 @@ public class FAQBoard_Controller {
 	private static final Logger logger=
 			LoggerFactory.getLogger(FAQBoard_Controller.class);
 
-<<<<<<< HEAD
 	
-=======
-
->>>>>>> c9c47e41758b31539dfacfd8eea9f9884867abe0
 	
 	//글쓰기폼
 	@RequestMapping(value="/faq_show_write_form.do", method=RequestMethod.GET)
@@ -88,11 +80,7 @@ public class FAQBoard_Controller {
 			
 			try {
 				byte[] fileData=file.getBytes();
-<<<<<<< HEAD
 				FileOutputStream output=new FileOutputStream("D:\\javaBigData\\mywork_spring\\OurBank3_1\\src\\main\\resources\\files\\"+fileName);
-=======
-				FileOutputStream output=new FileOutputStream("C:\\eclipse_ourBank\\OurBank\\src\\main\\resources\\files\\"+fileName);
->>>>>>> c9c47e41758b31539dfacfd8eea9f9884867abe0
 				output.write(fileData);
 			}catch (Exception e) {
 				e.printStackTrace();
@@ -118,18 +106,12 @@ public class FAQBoard_Controller {
 			@RequestParam("current_page") String pageForView, Model model
 			) {
 		logger.info("faqList called !!");
-<<<<<<< HEAD
 		
 		
 		model.addAttribute("totalCnt", new Integer(boardService.getTotalCnt()));//전체 글수
 		model.addAttribute("current_page",pageForView);
 		model.addAttribute("boardList", boardService.getList(Integer.parseInt(pageForView), 10)); //리스트뿌릴 ArrayList 받아와서 저장
 		
-=======
-		model.addAttribute("totalCnt", new Integer(boardService.getTotalCnt()));//전체 글수
-		model.addAttribute("current_page",pageForView);
-		model.addAttribute("boardList", boardService.getList(Integer.parseInt(pageForView), 10)); //리스트뿌릴 ArrayList 받아와서 저장
->>>>>>> c9c47e41758b31539dfacfd8eea9f9884867abe0
 		return "board_customer/faq/faqListSpecificPage";
 	}
 	//회원가입 리스트 뿌리기
@@ -194,11 +176,7 @@ public class FAQBoard_Controller {
 	         method=RequestMethod.GET)
 	   @ResponseBody
 	   public byte[] downProcess(HttpServletResponse response, @RequestParam String filename) throws IOException{
-<<<<<<< HEAD
 	      File file = new File("D:\\javaBigData\\mywork_spring\\OurBank3_1\\src\\main\\resources\\files\\" + filename);
-=======
-	      File file = new File("C:\\eclipse_ourBank\\OurBank\\src\\main\\resources\\files\\" + filename);
->>>>>>> c9c47e41758b31539dfacfd8eea9f9884867abe0
 	      byte[] bytes = FileCopyUtils.copyToByteArray(file);
 	      String fn = new String(file.getName().getBytes("8859_1"),"euc-kr");
 	      
@@ -255,11 +233,7 @@ public class FAQBoard_Controller {
 			
 			try {
 				byte[] fileData=file.getBytes();
-<<<<<<< HEAD
 				FileOutputStream output=new FileOutputStream("D:\\javaBigData\\mywork_spring\\OurBank3_1\\src\\main\\resources\\files\\"+fileName);
-=======
-				FileOutputStream output=new FileOutputStream("C:\\eclipse_ourBank\\OurBank\\src\\main\\resources\\files\\"+fileName);
->>>>>>> c9c47e41758b31539dfacfd8eea9f9884867abe0
 				output.write(fileData);
 			}catch (Exception e) {
 				e.printStackTrace();
