@@ -19,6 +19,15 @@ public class QNABoard_Service {
 		boardMapper.insertBoard(boardBean);	
 		};
 
+	// 가장 최근글 가져오기
+	public int getRecent() {
+		return boardMapper.getRecent();
+	}
+	//본글-답변 그룹 지정
+	public void updateReply( int idx) {
+		this.boardMapper.updateReply(idx);
+	}
+	
 	// 조회수 올리기
 	public void updateHits(int hits, int idx) {
 		System.out.println("조회수 올라감");

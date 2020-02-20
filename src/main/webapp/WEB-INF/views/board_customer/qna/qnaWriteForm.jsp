@@ -43,22 +43,54 @@ function boardlist(){
 <!-- *********************** 내용 ****************************  -->
 <c:url var="insertUrl" value="/qna_write_form.do" />	
 <sf:form modelAttribute="boardBean" commandName="boardBean" enctype="multipart/form-data" method="POST" action="${insertUrl}" >
-	<sf:hidden path="idx" value="${id_x}"/>
-
+	<sf:hidden path="idx" value="${idx}"/>
+	<sf:hidden path="reply" vluae="${boardBean.getReply()}"/>
+	
 	<table width="400" border="1" cellspacing="0" cellpadding="5">
 		<tr>
 			<td><b>제목</b></td>
-			<td><sf:input path="subject" size="50" maxlength="50"  value="[질문]"/><br /> 
+			<td>
+			<c:if test="${reply==0}">
+			<sf:input path="subject" size="50" maxlength="50"  value="[질문]"/>
+			</c:if>
+			<c:if test="${reply!=0}">
+			<sf:input path="subject" size="50" maxlength="50"  value="[답변]"/>
+			</c:if>
+			<br /> 
 			<sf:errors path="subject" cssClass="error" /></td>
 		</tr>
+		<!-- 고객이 선택한 카테고리랑 같은거 선택하게 해야함 -->
+		<c:if test="${category eq 'signup'||boardData.getCategory() eq null}">
 		<tr>
 			<td><b>카테고리</b></td>
 			<td><sf:select path="category">
-				<sf:option value="signup" label="회원가입"/>
+				<sf:option value="signup" label="회원가입" selected="selected"/>
 				<sf:option value="savings" label="예적금"/>
 				<sf:option value="etc" label="기타"/>
 			</sf:select></td>
 		</tr>
+		</c:if>
+		<c:if test="${category eq 'savings'}">
+		<tr>
+			<td><b>카테고리</b></td>
+			<td><sf:select path="category">
+				<sf:option value="signup" label="회원가입" />
+				<sf:option value="savings" label="예적금" selected="selected"/>
+				<sf:option value="etc" label="기타"/>
+			</sf:select></td>
+		</tr>
+		</c:if>
+		<c:if test="${category eq 'etc'}">
+		<tr>
+			<td><b>카테고리</b></td>
+			<td><sf:select path="category">
+				<sf:option value="signup" label="회원가입" />
+				<sf:option value="savings" label="예적금"/>
+				<sf:option value="etc" label="기타" selected="selected"/>
+			</sf:select></td>
+		</tr>
+		</c:if>
+	
 		
 		<tr>
 			<td><b>내용</b></td>
@@ -72,8 +104,10 @@ function boardlist(){
 			<td><input type="file" name="file"></td>
 		</tr>
 		<tr>
-			<td colspan="2" align="center"><input type="submit" value="등록" />
-				<input type="button" value="취소" onclick="javascript:boardlist()"></td>
+			<td colspan="2" align="center">
+			<input type="submit" value="등록" />
+
+			<input type="button" value="취소" onclick="javascript:boardlist()"></td>
 		</tr>
 	</table>
 </sf:form>

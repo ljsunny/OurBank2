@@ -1,3 +1,2 @@
 eclipse.preferences.version=1
-encoding/<project>=euc-kr
-separateDerivedEncodings=true
+encoding//src/main/webapp/resources/js/script.js=EUC-KR

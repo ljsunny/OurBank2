@@ -61,6 +61,7 @@ function etclist(){
 <%
 	int c_page = Integer.parseInt((String) (pageContext.getAttribute("current_page")));
 	pageContext.setAttribute("c_page", c_page);
+	
 %>
 <table width="700">
 	<tr>
@@ -143,13 +144,17 @@ function etclist(){
 			</c:forEach></td>
 	</tr>
 </table>
-<%-- <c:if test="sessionID가 admin이면"> --%> 
+<%-- <c:if test="sessionID가 admin이면"> --%>
+<!-- 로그인 하면만 떠야함 -->
+
+<c:if test="${uid ne null}"> 
 <table cellspacing="1" width="700">
 	<tr>
 		<td><input type="button" value="글쓰기"
 			onclick="window.location='qna_show_write_form.do'"></td>
 	</tr>
 </table>
+</c:if>
 <%-- </c:if> --%>
 </div>	
 <!-- *********************** 게시판 글쓰기 폼 ****************************  -->	
