@@ -6,10 +6,17 @@
 	https://www.springframework.org/schema/beans/spring-beans.xsd
 	http://www.springframework.org/schema/tx
 	http://www.springframework.org/schema/tx/spring-tx.xsd">
+<<<<<<< HEAD
 	
 	<!-- Root Context: defines shared resources visible to all other web components -->
 			<bean id="dataSource"
 		class="org.apache.commons.dbcp.BasicDataSource">
+=======
+
+	<!-- Root Context: defines shared resources visible to all other web components -->
+	<bean id="dataSource"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+>>>>>>> c9c47e41758b31539dfacfd8eea9f9884867abe0
 		<property name="driverClassName">
 			<value>oracle.jdbc.driver.OracleDriver</value>
 		</property>
@@ -22,9 +29,12 @@
 		<property name="password">
 			<value>1234</value>
 		</property>
+<<<<<<< HEAD
 		<property name="maxWait">
 			<value>-1</value>
 		</property>
+=======
+>>>>>>> c9c47e41758b31539dfacfd8eea9f9884867abe0
 	</bean>
 	<bean id="sqlSessionFactory"
 		class="org.mybatis.spring.SqlSessionFactoryBean">
@@ -36,6 +46,7 @@
 		</constructor-arg>
 	</bean>
 
+<<<<<<< HEAD
 	<!-- <bean id="transactionManager"
 		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
 		<property name="dataSource" ref="dataSource"></property>
@@ -49,6 +60,17 @@
 			value="com.ourbank.app.mapper.User_Mapper"></property>
 		<property name="sqlSessionFactory" ref="sqlSessionFactory" />
 	</bean>
+=======
+	<bean id="transactionManager"
+		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="dataSource"></property>
+	</bean>
+	<tx:annotation-driven
+		transaction-manager="transactionManager" />
+
+
+
+>>>>>>> c9c47e41758b31539dfacfd8eea9f9884867abe0
 	<bean id="FAQ_boardMapper"
 		class="org.mybatis.spring.mapper.MapperFactoryBean">
 		<property name="mapperInterface"
@@ -67,6 +89,7 @@
 			value="com.ourbank.app.mapper.Email_Mapper"></property>
 		<property name="sqlSessionFactory" ref="sqlSessionFactory" />
 	</bean>
+<<<<<<< HEAD
 	<bean id="MyPage_Mapper"
 		class="org.mybatis.spring.mapper.MapperFactoryBean">
 		<property name="mapperInterface"
@@ -91,4 +114,8 @@
 			value="com.ourbank.app.mapper.AdminPage_Mapper"></property>
 		<property name="sqlSessionFactory" ref="sqlSessionFactory" />
 	</bean>
+=======
+
+
+>>>>>>> c9c47e41758b31539dfacfd8eea9f9884867abe0
 </beans>

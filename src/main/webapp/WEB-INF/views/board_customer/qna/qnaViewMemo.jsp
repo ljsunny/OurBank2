@@ -8,7 +8,11 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!-- model에 저장해 둔거 불러옴 -->
 
+<<<<<<< HEAD
 <c:set var="str_aid" value="${idx}" />
+=======
+<c:set var="str_aid" value="${idx }" />
+>>>>>>> c9c47e41758b31539dfacfd8eea9f9884867abe0
 <c:set var="str_c_page" value="${current_page}" />
 <c:set var="searchString" value="${searchStr}" />
 <c:set var="filename" value="${filename}"/>
@@ -22,7 +26,10 @@
 <%
 	String searchString=(String) (pageContext.getAttribute("searchString"));
 	String filename=(String) (pageContext.getAttribute("filename"));
+<<<<<<< HEAD
 	String uid=(String)session.getAttribute("uid");
+=======
+>>>>>>> c9c47e41758b31539dfacfd8eea9f9884867abe0
 %>
 <script  language="javascript">
 function boardlist(){
@@ -46,9 +53,12 @@ function download(){
 	en_filename=encodeURI(param);
 	location.href='qna_download.do?filename='+en_filename;
 }
+<<<<<<< HEAD
 function boardreply(){
 	location.href='reply_from.do?idx=${idx}&category=${category}';
 }
+=======
+>>>>>>> c9c47e41758b31539dfacfd8eea9f9884867abe0
 
 </script>
 </head>
@@ -70,7 +80,11 @@ function boardreply(){
 	</div>
 	
 <!-- *********************** 내용 ****************************  -->	
+<<<<<<< HEAD
 
+=======
+	
+>>>>>>> c9c47e41758b31539dfacfd8eea9f9884867abe0
 <table cellspacing="0" cellpadding="5" border="1" width="600"  >
 		<tr>
 			<td><b>제목</b></td>
@@ -100,6 +114,7 @@ function boardreply(){
 <table cellspacing="0" cellpadding="0" border="0" width="500">
 	<tr>
 	<td>
+<<<<<<< HEAD
 	<c:if test="${boardData.getId()==uid}">
 		<!-- 작성자만 수정, 삭제 할 수있음 -->
 		<input type="button" value="수정" onclick="javascript:boardmodify()">
@@ -110,6 +125,13 @@ function boardreply(){
 		<input type="button" value="답글" onclick="javascript:boardreply()">
 	</c:if>
 		<input type="button" value="목록" onclick="javascript:boardlist()">
+=======
+		<input type="button" value="수정" onclick="javascript:boardmodify()">
+		<input type="button" value="목록" onclick="javascript:boardlist()">
+		<!-- 관리자만 작성할 수 있음 -->
+		<input type="button" value="답글" onclick="javascript:boardanswer()">
+		<input type="button" value="삭제" onclick="javascript:boarddelete()">
+>>>>>>> c9c47e41758b31539dfacfd8eea9f9884867abe0
 	</td>
 	</tr>
 

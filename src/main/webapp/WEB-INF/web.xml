@@ -19,34 +19,47 @@
 		<filter-name>encodingFilter</filter-name>
 		<url-pattern>/*</url-pattern>
 	</filter-mapping>
+<<<<<<< HEAD
 	<!-- The definition of the Root Spring Container shared by all Servlets and Filters -->
+=======
+
+	<!-- The definition of the Root Spring Container shared by all Servlets 
+		and Filters -->
+>>>>>>> c9c47e41758b31539dfacfd8eea9f9884867abe0
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
 		<param-value>/WEB-INF/spring/root-context.xml</param-value>
 	</context-param>
-	
+
 	<!-- Creates the Spring Container shared by all Servlets and Filters -->
 	<listener>
-		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+		<listener-class>org.springframework.web.context.ContextLoaderListener
+		</listener-class>
 	</listener>
 
 	<!-- Processes application requests -->
 	<servlet>
 		<servlet-name>appServlet</servlet-name>
-		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet
+		</servlet-class>
 		<init-param>
 			<param-name>contextConfigLocation</param-name>
-			<param-value>/WEB-INF/spring/appServlet/servlet-context.xml</param-value>
+			<param-value>/WEB-INF/spring/appServlet/servlet-context.xml
+			</param-value>
 		</init-param>
 		<load-on-startup>10</load-on-startup>
 	</servlet>
-		
+
 	<servlet-mapping>
 		<servlet-name>appServlet</servlet-name>
 		<url-pattern>/</url-pattern>
 	</servlet-mapping>
 	
+<<<<<<< HEAD
 		<!-- bean.xml 용 dispatcher Servlet -->
+=======
+	<!-- bean.xml 용 dispatcher Servlet -->
+>>>>>>> c9c47e41758b31539dfacfd8eea9f9884867abe0
 	<servlet>
 		<servlet-name>dispatcher</servlet-name>
 		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
@@ -54,7 +67,11 @@
 			<param-name>contextConfigLocation</param-name>
 			<param-value>/WEB-INF/spring/appServlet/beans-context.xml</param-value>
 		</init-param>
+<<<<<<< HEAD
 		<load-on-startup>1</load-on-startup>
+=======
+		
+>>>>>>> c9c47e41758b31539dfacfd8eea9f9884867abe0
 	</servlet>
 	
 	<servlet-mapping>
@@ -62,5 +79,8 @@
 		<url-pattern>*.do</url-pattern>
 	</servlet-mapping>
 	
+<<<<<<< HEAD
 
+=======
+>>>>>>> c9c47e41758b31539dfacfd8eea9f9884867abe0
 </web-app>

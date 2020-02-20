@@ -11,12 +11,18 @@ import com.ourbank.app.bean.QNABoard_Bean;
 @Repository
 public interface QNABoard_Mapper {
 	//글입력처리
+<<<<<<< HEAD
 		final String INSERT="insert into qna_board(id_x, id, subject, created_date, reply,category, content, filename, filesize)"
 				+ " values(faq_seq.nextval,#{id},#{subject},SYSDATE,#{reply}, #{category},#{content},#{filename},#{filesize})";
+=======
+		final String INSERT="insert into qna_board(id_x, id, subject, created_date, category, content, filename, filesize)"
+				+ " values(faq_seq.nextval,#{id},#{subject},SYSDATE, #{category},#{content},#{filename},#{filesize})";
+>>>>>>> c9c47e41758b31539dfacfd8eea9f9884867abe0
 		
 		@Insert(INSERT)
 		void insertBoard(QNABoard_Bean boardBean);
 		
+<<<<<<< HEAD
 		//가장 최근글 얻어오기
 		final String SELECT_RECENT=" select id_x from ("
 									+ "select * from qna_board order by created_date desc) "
@@ -31,6 +37,8 @@ public interface QNABoard_Mapper {
 		void updateReply(
 				@Param("idx") int idx);
 		
+=======
+>>>>>>> c9c47e41758b31539dfacfd8eea9f9884867abe0
 		//전체 글개수
 		final String SELECT_CNT_ALL="select count(1) from qna_board";
 		
@@ -44,10 +52,16 @@ public interface QNABoard_Mapper {
 		void updateHits(@Param("hits") int hits, @Param("idx") int idx);
 		
 		//리스트 뿌리기
+<<<<<<< HEAD
 		final String SELECT_PAGE="SELECT * FROM (SELECT ID_X, SUBJECT, ID, CREATED_DATE," + 
 				" CONTENT, HITS, ceil(rownum/ #{rowsPerPage}) as page" + 
 				" FROM (SELECT * FROM QNA_BOARD ORDER BY REPLY DESC, ID_X ASC))" + 
 				" WHERE page=#{page}" ;
+=======
+		final String SELECT_PAGE="SELECT * FROM (SELECT ID_X, SUBJECT, ID, CREATED_DATE,"
+				+ " CONTENT, HITS, ceil(rownum/ #{rowsPerPage}) as page"
+				+ " FROM QNA_BOARD ORDER BY CREATED_DATE DESC) WHERE page=#{page}" ;
+>>>>>>> c9c47e41758b31539dfacfd8eea9f9884867abe0
 		
 		@Select(SELECT_PAGE)
 		@Results(value= {
@@ -60,8 +74,12 @@ public interface QNABoard_Mapper {
 		})
 		ArrayList<QNABoard_Bean>getList(@Param("page") int page,
 				@Param("rowsPerPage") int rowsPerPage);
+<<<<<<< HEAD
 	
 	
+=======
+		
+>>>>>>> c9c47e41758b31539dfacfd8eea9f9884867abe0
 	// 회원가입 글개수
 	final String SELECT_SIGN_UP_CNT = "select count(1) from qna_board where category='signup'";
 
@@ -113,8 +131,13 @@ public interface QNABoard_Mapper {
 				@Result(property = "content", column = "content"), @Result(property = "hits", column = "hits") })
 		ArrayList<QNABoard_Bean> getEtcList(@Param("page") int page, @Param("rowsPerPage") int rowsPerPage);
 
+<<<<<<< HEAD
 		//글보기-글보기에 뿌릴 bean 가져오기: idx, subject, id, created_date, content, hits, filename,category
 		final String SELECT_BY_ID="select id_x,subject, id, created_date, content, hits, filename,category"
+=======
+		//글보기-글보기에 뿌릴 bean 가져오기: idx, subject, id, created_date, content, hits, filename
+		final String SELECT_BY_ID="select id_x,subject, id, created_date, content, hits, filename"
+>>>>>>> c9c47e41758b31539dfacfd8eea9f9884867abe0
 				+ " from qna_board where id_x=#{idx}";
 		
 		@Select(SELECT_BY_ID)
@@ -126,8 +149,12 @@ public interface QNABoard_Mapper {
 				@Result(property="created_date",column="created_date"),
 				@Result(property="content",column="content"),
 				@Result(property = "hits", column="hits"),
+<<<<<<< HEAD
 				@Result(property = "filename", column="filename"),
 				@Result(property = "category", column="category")
+=======
+				@Result(property = "filename", column="filename")
+>>>>>>> c9c47e41758b31539dfacfd8eea9f9884867abe0
 		})
 		//						input
 		QNABoard_Bean getSpecificRow(@Param("idx") int idx);

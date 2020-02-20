@@ -14,7 +14,10 @@ public class QNABoard_Bean {
 	@NotBlank(message="내용을 입력해주세요")
 	String content;
 	String created_date;
+<<<<<<< HEAD
 	int reply;
+=======
+>>>>>>> c9c47e41758b31539dfacfd8eea9f9884867abe0
 	int hits;
 	String category;
 	String filename;
@@ -23,6 +26,7 @@ public class QNABoard_Bean {
 	MultipartFile file;
 	
 	
+<<<<<<< HEAD
 	
 	public int getReply() {
 		return reply;
@@ -30,6 +34,8 @@ public class QNABoard_Bean {
 	public void setReply(int reply) {
 		this.reply = reply;
 	}
+=======
+>>>>>>> c9c47e41758b31539dfacfd8eea9f9884867abe0
 	public MultipartFile getFile() {
 		return file;
 	}
